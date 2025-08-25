@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería</title>
+  <style>
+    body {
+      background-color: rgb(21, 98, 110); 
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #fff;
+    }
+
+    .botton-llamativo {
+      background-color: #10a3d8;
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 8px 10px 6px #430000;
+      margin-top: 30px;
+    }
+
+    .botton-llamativo:hover {
+      background-color: #888c84;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galería del Instituto</h1>
+
+  <div class="gallery-container">
+    <img src="Baños.jpeg" alt="Baños" onclick="mostrar(this.src)">
+    <img src="Basurero.jpeg" alt="Basurero" onclick="mostrar(this.src)">
+    <img src="Cafetería.jpeg" alt="Cafetería" onclick="mostrar(this.src)">
+    <img src="Cancha.jpeg" alt="Cancha" onclick="mostrar(this.src)">
+    <img src="Consejería.jpeg" alt="Consejería" onclick="mostrar(this.src)">
+    <img src="Electricidad.jpeg" alt="Electricidad" onclick="mostrar(this.src)">
+    <img src="Entrada.jpeg" alt="Entrada" onclick="mostrar(this.src)">
+    <img src="Informática.jpeg" alt="Informática" onclick="mostrar(this.src)">
+    <img src="LogoC.jpeg" alt="Logo" onclick="mostrar(this.src)">
+    <img src="Patio.jpeg" alt="Patio" onclick="mostrar(this.src)">
+    <img src="Patio Trasero.jpeg" alt="Patio Trasero" onclick="mostrar(this.src)">
+    <img src="Soldadura.jpeg" alt="Soldadura" onclick="mostrar(this.src)">
+  </div>
+
+  <div id="lightbox" onclick="cerrar()">
+    <img id="img-grande" src="">
+  </div>
+
+  <a href="index.html">
+    <button class="botton-llamativo">← Atrás</button>
+  </a>
+
+  <script>
+    function mostrar(src) {
+      document.getElementById("img-grande").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function cerrar() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+
+
